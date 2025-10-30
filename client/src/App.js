@@ -2,7 +2,7 @@ import "./App.css";
 import MSsec from "./MSsec.js";
 
 function App() {
-  /* const mentors = [
+  /*  const mentors = [
     {
       id: 1,
       profileUrl: "https://cdn-icons-png.flaticon.com/512/847/847969.png",
@@ -40,8 +40,7 @@ function App() {
         "https://via.placeholder.com/150x80/00FF00/FFFFFF?text=Sponsor+3",
     },
   ];
-  */
-
+*/
   return /* <MSsec mentorList={mentors} sponsors={sponsors} /> */;
 }
 

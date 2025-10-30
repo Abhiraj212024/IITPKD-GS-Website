@@ -19,8 +19,8 @@ export default function MentorCard({
       <p className="mentorCard_sys">{sys}</p>
       <p className="mentorCard_des">{des}</p>
       <div className="mentorCard_links">
-        <a className="mentorCard_link mentorCard_link-email">Email</a>
-        <a className="mentorCard_link mentorCard_link-linkedin">LinkedIn</a>
+        <p className="mentorCard_link mentorCard_link-email">Email</p>
+        <p className="mentorCard_link mentorCard_link-linkedin">LinkedIn</p>
       </div>
     </div>
   );
