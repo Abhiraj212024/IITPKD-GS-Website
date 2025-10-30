@@ -1,0 +1,27 @@
+import "./MSsec.css";
+export default function MentorCard({
+  profileUrl,
+  name,
+  sys,
+  des,
+  email,
+  linkedin,
+}) {
+  return (
+    <div className="mentorCard">
+      <img
+        src={profileUrl}
+        alt={`${name}'s profile picture`}
+        className="mentorCard_image"
+      />
+
+      <h3 className="mentorCard_name">{name}</h3>
+      <p className="mentorCard_sys">{sys}</p>
+      <p className="mentorCard_des">{des}</p>
+      <div className="mentorCard_links">
+        <a className="mentorCard_link mentorCard_link-email">Email</a>
+        <a className="mentorCard_link mentorCard_link-linkedin">LinkedIn</a>
+      </div>
+    </div>
+  );
+}
