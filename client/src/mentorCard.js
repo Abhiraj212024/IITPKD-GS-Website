@@ -15,7 +15,7 @@ export default function MentorCard({
         className="mentorCard_image"
       />
 
-      <h3 className="mentorCard_name">{name}</h3>
+      <p className="mentorCard_name">{name}</p>
       <p className="mentorCard_sys">{sys}</p>
       <p className="mentorCard_des">{des}</p>
       <div className="mentorCard_links">
