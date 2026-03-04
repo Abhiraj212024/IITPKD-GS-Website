@@ -1,4 +1,4 @@
-import "./MSsec.css";
+import "../styles/MSsec.css";
 
 export default function Sponsor({ sponsors }) {
   return (

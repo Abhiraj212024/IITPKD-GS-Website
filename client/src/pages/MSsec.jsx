@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import MentorCard from "./mentorCard.js";
-import Sponsor from "./sponsor.js";
-import "./MSsec.css";
+import  { useState } from "react";
+import MentorCard from "../comps/mentorCard";
+import SponsorCard from "../comps/sponsorCard";
+import "../styles/MSsec.css";
 
 export default function MSsec({ mentorList, sponsors }) {
   const [currentView, setCurrentView] = useState("mentors");
@@ -32,7 +32,7 @@ export default function MSsec({ mentorList, sponsors }) {
           ))}
         </ul>
       ) : (
-        <Sponsor sponsors={sponsors} />
+        <SponsorCard sponsors={sponsors} />
       )}
     </div>
   );
