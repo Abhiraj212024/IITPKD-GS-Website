@@ -1,165 +1,197 @@
-/*MSsec*/
+  /*MSsec*/
+  .MSsec {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 
-.MSsec {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
+  .MSsec ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 
-.MSsec ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 24px;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+  .MSsec li {
+    list-style: none;
+    display: flex;
+  }
 
-.MSsec li {
-  list-style: none;
-  display: flex;
-}
-.MSsec li .mentorCard {
-  width: 100%;
-}
-/*Mssec conditional css */
-.view-toggle-buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 24px;
-  gap: 10px;
-}
+  .MSsec li .mentorCard {
+    width: 100%;
+  }
 
-.view-toggle-buttons button {
-  font-family: Arial, sans-serif;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: 600;
-  border: 2px solid #007bff;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: #ffffff;
-  color: #007bff;
-  transition: all 0.2s ease-in-out;
-}
+  /* Toggle Buttons */
+  .view-toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+    gap: 10px;
+  }
 
-.view-toggle-buttons button:hover {
-  background-color: #f0f8ff;
-}
+  .view-toggle-buttons button {
+    font-family: Arial, sans-serif;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #ffffff;
+    transition: all 0.2s ease-in-out;
+  }
 
-.view-toggle-buttons button.active {
-  background-color: #007bff;
-  color: #ffffff;
-}
+  .view-toggle-buttons button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
 
-/* sponsor*/
-.sponsor-grid-container {
-  width: 90%;
-  margin: 20px auto;
-  text-align: center;
-}
+  .view-toggle-buttons button.active {
+    background-color: #ffffff;
+    color: #000000;
+  }
 
-.sponsor-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-}
+  /* Sponsor */
+  .sponsor-grid-container {
+    width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    color: #ffffff;
+  }
 
-.sponsor-item {
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+  .sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+  }
 
-.sponsor-logo {
-  max-width: 100%;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
+  .sponsor-item {
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 
-.sponsor-name {
-  font-size: 1rem;
-  font-weight: bold;
-  margin: 0;
-}
-/*mentor*/
-.mentorCard {
-  max-width: 320px;
-  min-height: 100px;
-  margin: 16px;
-  padding: 24px;
-  background-color: #ffffff;
-  border-radius: 16px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  .sponsor-logo {
+    max-width: 100%;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+  }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+  .sponsor-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff;
+  }
 
-.mentorCard_image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 16px;
-  border: 3px solid #f0f0f0;
-}
+  /* Mentor Card */
+  .mentorCard {
+    max-width: 320px;
+    min-height: 100px;
+    margin: 16px;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-.mentorCard_name {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #222;
-  margin: 8px 0 4px 0;
-}
+  .mentorCard_image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 3px solid #f0f0f0;
+  }
 
-.mentorCard_sys {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #007bff;
-  margin: 0 0 8px 0;
-}
+  .mentorCard_name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+    margin: 8px 0 4px 0;
+  }
 
-.mentorCard_des {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0 0 16px 0;
-  line-height: 1.4;
+  .mentorCard_sys {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #007bff;
+    margin: 0 0 8px 0;
+  }
 
-  flex-grow: 1;
-}
+  .mentorCard_des {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
 
-.mentorCard_links {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  width: 100%;
-}
+  .mentorCard_links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+  }
 
-.mentorCard_link {
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 10px 20px;
-  border-radius: 20px;
-  display: flex;
-}
+  .mentorCard_link {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+  }
 
-.mentorCard_link-email {
-  background-color: #007bff;
-  color: #ffffff;
-}
+  .mentorCard_link-email {
+    background-color: #007bff;
+    color: #ffffff;
+  }
 
-.mentorCard_link-linkedin {
-  background-color: #f0f0f0;
-  color: #333;
-}
+  .mentorCard_link-linkedin {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+
+
+  .view-toggle-buttons button {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    background-color: transparent !important;
+    padding: 10px 20px !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+  }
+
+  .view-toggle-buttons button.active {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+
+
+
+
+
+
+
+
+  

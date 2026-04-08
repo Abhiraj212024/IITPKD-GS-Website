@@ -14,7 +14,7 @@ export default function SubsystemDetail() {
       <div className="subsystem-detail-container">
         <div className="subsystem-detail-error">
           <h2>Subsystem not found</h2>
-          <button className="back-button" onClick={() => navigate('/')}>
+          <button className="back-button" onClick={() => navigate('/subsystems')}>
             ← Back to Subsystems
           </button>
         </div>
@@ -25,7 +25,7 @@ export default function SubsystemDetail() {
   return (
     <div className="subsystem-detail-wrapper">
       <div className="subsystem-detail-container">
-        <button className="back-button" onClick={() => navigate('/')}>
+        <button className="back-button" onClick={() => navigate('/subsystems')}>
           ← Back
         </button>
         

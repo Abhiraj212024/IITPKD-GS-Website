@@ -22,17 +22,20 @@
 
 
 import React from "react";
+import "../styles/Home.css";
 
 function Home() {
   return (
     <div className="section">
-      <h2>Welcome to The Rocketry Club Of IIT Palakkad 🚀</h2>
-      <p>
-        We are the official rocketry team of IIT Palakkad, participating in
-        national and international rocketry competitions. Our mission is to
-        design, build, and launch high-powered rockets, pushing the boundaries
-        of student rocketry in India.
-      </p>
+      <div className="home-content">
+        <h2>Welcome to The Rocketry Club Of IIT Palakkad 🚀</h2>
+        <p>
+          We are the official rocketry team of IIT Palakkad, participating in
+          national and international rocketry competitions. Our mission is to
+          design, build, and launch high-powered rockets, pushing the boundaries
+          of student rocketry in India.
+        </p>
+      </div>
     </div>
   );
 }
