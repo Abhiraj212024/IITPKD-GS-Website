@@ -5,7 +5,7 @@ import Home from "./components/Home.jsx";
 import Subsystems from "./pages/Subsystems.jsx";
 import SubsystemDetail from "./pages/SubsystemDetail.jsx";
 import MSsec from "./pages/MSsec.jsx";
-import { mentors, sponsors } from "./data/sponsorsData.jsx";
+import { sponsors } from "./data/sponsorsData.jsx";
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/subsystems" element={<Subsystems />} />
         <Route path="/subsystems/:id" element={<SubsystemDetail />} />
-        <Route path="/team" element={<MSsec mentorList={mentors} sponsors={sponsors} />} />
+        <Route path="/team" element={<MSsec sponsors={sponsors} />} />
       </Routes>
     </>
   );

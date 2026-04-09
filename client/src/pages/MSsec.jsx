@@ -1,10 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import MentorCard from "../comps/mentorCard";
 import SponsorCard from "../comps/sponsorCard";
 import "../styles/MSsec.css";
 
-export default function MSsec({ mentorList, sponsors }) {
+export default function MSsec({ sponsors }) {
   const [currentView, setCurrentView] = useState("mentors");
+  const [mentorList, setMentorList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchMentors = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get('/member');
+        console.log('Fetched mentors:', response.data);
+        setMentorList(response.data);
+      } catch (err) {
+        setError(err.message);
+        console.error('Error fetching mentors:', err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMentors();
+  }, []);
 
   const btnStyle = {
     padding: "10px 20px",
@@ -45,13 +67,19 @@ export default function MSsec({ mentorList, sponsors }) {
       </div>
 
       {currentView === "mentors" ? (
-        <ul>
-          {mentorList.map((mentor) => (
-            <li key={mentor.id}>
-              <MentorCard {...mentor} />
-            </li>
-          ))}
-        </ul>
+        loading ? (
+          <p>Loading mentors...</p>
+        ) : error ? (
+          <p>Error loading mentors: {error}</p>
+        ) : (
+          <ul>
+            {mentorList.map((mentor) => (
+              <li key={mentor._id}>
+                <MentorCard {...mentor} />
+              </li>
+            ))}
+          </ul>
+        )
       ) : (
         <SponsorCard sponsors={sponsors} />
       )}
