@@ -1,51 +1,14 @@
 const mongoose = require('mongoose');
 
-// Define the schema
 const memberSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  subsystem: {
-    type: String,
-    required: true,
-    enum: ['Propulsion', 'Avionics', 'Ground Station', 'Recovery', 'Payload', 'Airframe'],
-    description: "Member's Subsystem"
-  },
-  position: {
-    type: String,
-    required: true,
-    enum: ['Member', 'Apprentice', 'Mentor', 'Subsystem Lead'], 
-    description: "Position in team hierarchy"
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    lowercase: true,
-    trim: true
-  },
-  linkedin: {
-    type: String,
-    required: false,
-    trim: true,
-    description: "LinkedIn profile URL"
-  },
-  instagram: {
-    type: String,
-    required: false,
-    trim: true,
-    description: "Instagram handle"
-  },
-  photo: {
-    type: String,
-    required: false,
-    description: "Google Drive link to photo"
-  }
+  name: { type: String, required: true },
+  subsystem: { type: String, required: true },
+  position: { type: String, required: true },
+  email: { type: String, required: true },
+  linkedin: String,
+  instagram: String,
+  photo: String
 });
 
-// Create the model
-const Member = mongoose.model('Member', memberSchema);
-
-module.exports = Member;
+// Mongoose will look for the "members" collection
+module.exports = mongoose.model('Member', memberSchema);
