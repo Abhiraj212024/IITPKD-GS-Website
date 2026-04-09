@@ -15,6 +15,12 @@ yarn-error.log*
 server/.env
 client/.env
 
+# Google API Credentials
+credentials.json
+token.json
+Database/credentials.json
+Database/token.json
+
 # Build outputs
 client/build/
 dist/
