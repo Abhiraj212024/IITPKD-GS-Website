@@ -1,197 +1,275 @@
-  /*MSsec*/
-  .MSsec {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-  }
+/* --- Main Layout & Container --- */
+.MSsec {
+  background-color: #0b132b;
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
 
-  .MSsec ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 24px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+.MSsec ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
 
-  .MSsec li {
-    list-style: none;
-    display: flex;
-  }
+/* --- Mentor Card Styling --- */
+.mentorCard {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.95),
+    rgba(17, 24, 39, 0.95)
+  );
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem 1.5rem;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.18);
+}
 
-  .MSsec li .mentorCard {
-    width: 100%;
-  }
+.mentorCard:hover {
+  border-color: rgba(234, 88, 12, 0.7);
+  transform: translateY(-3px);
+}
 
-  /* Toggle Buttons */
-  .view-toggle-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 24px;
-    gap: 10px;
-  }
+.mentorCard_avatar {
+  width: 120px;
+  height: 120px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(234, 88, 12, 0.2),
+    rgba(59, 130, 246, 0.15)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
 
-  .view-toggle-buttons button {
-    font-family: Arial, sans-serif;
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: 600;
-    border: 2px solid #ffffff;
-    border-radius: 20px;
-    cursor: pointer;
-    background-color: transparent;
-    color: #ffffff;
-    transition: all 0.2s ease-in-out;
-  }
+.mentorCard_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
 
-  .view-toggle-buttons button:hover {
-    background-color: rgba(255, 255, 255, 0.15);
-  }
+.mentorCard_body {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
 
-  .view-toggle-buttons button.active {
-    background-color: #ffffff;
-    color: #000000;
-  }
+.mentorCard_name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.35rem 0;
+}
 
-  /* Sponsor */
-  .sponsor-grid-container {
-    width: 90%;
-    margin: 20px auto;
-    text-align: center;
-    color: #ffffff;
-  }
+.mentorCard_sys {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #f97316;
+  margin: 0 0 0.85rem 0;
+}
 
-  .sponsor-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-  }
+.mentorCard_des {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.75;
+  margin: 0;
+  min-height: 3rem;
+}
 
-  .sponsor-item {
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 10px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+.mentorCard_actions {
+  display: grid;
+  gap: 0.9rem;
+  width: 100%;
+}
 
-  .sponsor-logo {
-    max-width: 100%;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 10px;
-  }
+.mentorCard_action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  width: 100%;
+  background-color: rgba(15, 23, 42, 0.94);
+  color: #cbd5e1;
+  padding: 0.9rem 1rem;
+  border-radius: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
-  .sponsor-name {
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 0;
-    color: #ffffff;
-  }
+.mentorCard_action:hover {
+  color: #ffffff;
+  background-color: rgba(30, 41, 59, 0.95);
+  transform: translateY(-1px);
+}
 
-  /* Mentor Card */
-  .mentorCard {
-    max-width: 320px;
-    min-height: 100px;
-    margin: 16px;
-    padding: 24px;
-    background-color: #ffffff;
-    border-radius: 16px;
-    border: 1px solid #e0e0e0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+.mentorCard_action-email {
+  justify-content: center;
+}
 
-  .mentorCard_image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 16px;
-    border: 3px solid #f0f0f0;
-  }
+.mentorCard_action-linkedin {
+  justify-content: center;
+}
 
-  .mentorCard_name {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #222;
-    margin: 8px 0 4px 0;
-  }
+.mentorCard_action-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 0.55rem;
+  background: rgba(234, 88, 12, 0.2);
+  color: #f97316;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
 
-  .mentorCard_sys {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #007bff;
-    margin: 0 0 8px 0;
-  }
+.mentorCard_action-linkedin .mentorCard_action-icon {
+  background: rgba(14, 165, 233, 0.16);
+  color: #38bdf8;
+}
 
-  .mentorCard_des {
-    font-size: 0.9rem;
-    color: #666;
-    margin: 0 0 16px 0;
-    line-height: 1.4;
-    flex-grow: 1;
-  }
+.mentorCard_action-email .mentorCard_action-icon {
+  background: rgba(234, 88, 12, 0.18);
+  color: #fb923c;
+}
 
-  .mentorCard_links {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-  }
+/* --- Sponsor Grid Styling (Bonus based on your component) --- */
+.sponsor-grid-container {
+  text-align: center;
+  padding: 2rem 0;
+  color: #ffffff;
+}
 
-  .mentorCard_link {
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 20px;
-    display: flex;
-  }
+.sponsor-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
-  .mentorCard_link-email {
-    background-color: #007bff;
-    color: #ffffff;
-  }
+.sponsor-item {
+  background-color: #ffffff;
+  border-radius: 28px;
+  padding: 1rem;
+  width: 320px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
+}
 
-  .mentorCard_link-linkedin {
-    background-color: #f0f0f0;
-    color: #333;
-  }
+.sponsor-item:hover {
+  transform: translateY(-4px);
+}
 
+.sponsor-logo-wrapper {
+  width: 100%;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
 
-  .view-toggle-buttons button {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    color: #ffffff !important;
-    border: 2px solid #ffffff !important;
-    background-color: transparent !important;
-    padding: 10px 20px !important;
-    border-radius: 20px !important;
-    cursor: pointer !important;
-    font-size: 1rem !important;
-    font-weight: 600 !important;
-  }
+.sponsor-logo {
+  width: auto;
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  border-radius: 18px;
+  background-color: #f8fafc;
+}
 
-  .view-toggle-buttons button.active {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-  }
+.sponsor-name {
+  margin: 0;
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+}
 
+/* --- Toggle Buttons --- */
+.view-toggle-btn {
+  padding: 10px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  /* Defining a transparent border prevents the button from slightly changing size when toggled */
+  border: 1px solid transparent;
+}
 
+.view-toggle-btn.active {
+  background-color: #ea580c; /* Orange */
+  color: white;
+}
 
+.view-toggle-btn.inactive {
+  background-color: #111827; /* Card color */
+  color: #94a3b8; /* Gray text */
+  border-color: #1e293b; /* Slate border */
+}
 
+/* Optional: Add a nice hover effect for the inactive button */
+.view-toggle-btn.inactive:hover {
+  color: #ffffff;
+  border-color: #ea580c;
+}
 
+/* Container for the Toggle Buttons */
+.toggle-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
 
+/* Loading and Error States */
+.status-message {
+  text-align: center;
+  color: #94a3b8; /* Slate gray to match your theme */
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
 
-
-
-  
+.status-message.error {
+  color: #ef4444; /* A nice red for error text */
+}
