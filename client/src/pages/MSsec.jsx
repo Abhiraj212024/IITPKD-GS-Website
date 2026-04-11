@@ -14,72 +14,55 @@ export default function MSsec({ sponsors }) {
     const fetchMentors = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('/member');
-        console.log('Fetched mentors:', response.data);
+        const response = await axios.get("/member");
+        console.log("Fetched mentors:", response.data);
         setMentorList(response.data);
       } catch (err) {
         setError(err.message);
-        console.error('Error fetching mentors:', err);
+        console.error("Error fetching mentors:", err);
       } finally {
         setLoading(false);
       }
     };
-
     fetchMentors();
   }, []);
 
-  const btnStyle = {
-    padding: "10px 20px",
-    border: "2px solid white",
-    borderRadius: "20px",
-    cursor: "pointer",
-    fontSize: "1rem",
-    fontWeight: "600",
-  };
-
-  const activeStyle = {
-    ...btnStyle,
-    background: "white",
-    color: "black",
-  };
-
-  const inactiveStyle = {
-    ...btnStyle,
-    background: "transparent",
-    color: "white",
-  };
-
   return (
     <div className="MSsec">
-      <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "24px" }}>
+      <div className="toggle-btn-container">
         <button
           onClick={() => setCurrentView("mentors")}
-          style={currentView === "mentors" ? activeStyle : inactiveStyle}
+          className={`view-toggle-btn ${currentView === "mentors" ? "active" : "inactive"}`}
         >
-          Show Mentors
+          Our Mentors
         </button>
         <button
           onClick={() => setCurrentView("sponsors")}
-          style={currentView === "sponsors" ? activeStyle : inactiveStyle}
+          className={`view-toggle-btn ${currentView === "sponsors" ? "active" : "inactive"}`}
         >
-          Show Sponsors
+          Our Sponsors
         </button>
       </div>
 
       {currentView === "mentors" ? (
-        loading ? (
-          <p>Loading mentors...</p>
-        ) : error ? (
-          <p>Error loading mentors: {error}</p>
-        ) : (
-          <ul>
-            {mentorList.map((mentor) => (
-              <li key={mentor._id}>
-                <MentorCard {...mentor} />
-              </li>
-            ))}
-          </ul>
-        )
+        <>
+          {loading && <p className="status-message">Loading mentors...</p>}
+          {error && (
+            <p className="status-message error">
+              Failed to load mentors: {error}
+            </p>
+          )}
+
+          {!loading && !error && (
+            <ul>
+              {mentorList.map((mentor) => (
+                <li key={mentor._id}>
+                  <MentorCard {...mentor} />
+                </li>
+              ))}
+            </ul>
+          )}
+        </>
       ) : (
         <SponsorCard sponsors={sponsors} />
       )}
