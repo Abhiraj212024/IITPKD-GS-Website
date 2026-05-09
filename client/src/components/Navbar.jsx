@@ -13,6 +13,9 @@ const Navbar = () => {
       <Link className={location.pathname === "/subsystems" ? "nav-btn active" : "nav-btn"} to="/subsystems">
         Subsystems
       </Link>
+      <Link className={location.pathname.startsWith("/projects") ? "nav-btn active" : "nav-btn"} to="/projects">
+        Projects
+      </Link>
       <Link className={location.pathname === "/team" ? "nav-btn active" : "nav-btn"} to="/team">
         Team & Sponsors
       </Link>
