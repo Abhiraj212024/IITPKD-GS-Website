@@ -10,12 +10,12 @@ app.use(express.json());
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch(err => console.error("❌ Error:", err));
+  .then(() => console.log(" MongoDB connected"))
+  .catch(err => console.error(" Error:", err));
 
 // Example route
 app.get("/", (req, res) => {
-  res.send("Rocketry Club API is running 🚀");
+  res.send("Rocketry Club API is running successfully");
 });
 
 const PORT = process.env.PORT || 5000;

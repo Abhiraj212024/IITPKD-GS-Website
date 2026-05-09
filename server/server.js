@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: false })); // form data
 app.use(express.json()); // json
 
 
-//Routes
+/* //Routes
 // Add this to your main server file
 
 app.get('/debug-db', async (req, res) => {
@@ -50,7 +50,9 @@ app.get('/debug-db', async (req, res) => {
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
-});
+}); */
+
+
 app.use('/member', require('./routes/member'));
 
 app.use(errorHandler);
