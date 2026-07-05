@@ -28,7 +28,7 @@ export default function MSsec({ sponsors }) {
   }, []);
 
   return (
-    <div className="MSsec">
+    <div className="MSsec page-transition">
       <div className="toggle-btn-container">
         <button
           onClick={() => setCurrentView("mentors")}

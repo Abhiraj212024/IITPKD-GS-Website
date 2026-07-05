@@ -25,7 +25,7 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="project-detail-wrapper">
+    <div className="project-detail-wrapper page-transition">
       <div className="project-detail-container">
         <button className="back-button" onClick={() => navigate('/projects')}>
           ← Back

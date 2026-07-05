@@ -7,7 +7,7 @@ export default function Subsystems() {
   const navigate = useNavigate();
 
   return (
-    <div className="subsystems-container">
+    <div className="subsystems-container page-transition">
       <div className="subsystems-header">
         <h1 className="subsystems-title">Our Subsystems</h1>
         <p className="subsystems-subtitle">

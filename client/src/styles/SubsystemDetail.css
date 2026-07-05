@@ -1,161 +1,131 @@
+/* SubsystemDetail.css */
+
 .subsystem-detail-wrapper {
   min-height: 100vh;
-  margin: 0;
-  padding: 4rem 2rem;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  color: #fff;
-  background-color: #0b101e;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 100px 96px 80px;
+  font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
 .subsystem-detail-container {
-  max-width: 800px;
+  max-width: 760px;
   width: 100%;
-  background: rgba(15, 20, 31, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 3rem;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
-  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: detailFadeIn 0.5s ease forwards;
 }
 
-.subsystem-detail-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, 
-    rgba(255,255,255,0) 0%, 
-    rgba(255,102,51,0.6) 50%, 
-    rgba(255,255,255,0) 100%
-  );
-}
+/* ── Back button — uses global .back-button from App.css ── */
 
-.back-button {
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.6);
-  font-family: inherit;
-  font-size: 0.95rem;
-  cursor: pointer;
-  padding: 0;
-  margin-bottom: 2.5rem;
-  display: flex;
-  align-items: center;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.back-button:hover {
-  color: #fff;
-  transform: translateX(-4px);
-}
-
+/* ── Error state ── */
 .subsystem-detail-error {
   text-align: center;
-  padding: 4rem;
+  padding: 80px 24px;
+  color: #B5B5B5;
 }
 
+/* ── Header ── */
 .subsystem-detail-header {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 2.5rem;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .subsystem-detail-icon {
-  width: 64px;
-  height: 64px;
-  padding: 16px;
-  background: rgba(255, 102, 51, 0.1);
-  border-radius: 16px;
-  color: #ff6633;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  padding: 12px;
+  background: rgba(0, 89, 255, 0.08);
+  border: 1px solid rgba(0, 89, 255, 0.2);
+  border-radius: 4px;
+  color: #0059FF;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 102, 51, 0.2);
+  margin-top: 6px;
+}
+
+.subsystem-detail-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
 }
 
 .subsystem-detail-title {
-  font-size: 3rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
   font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
   margin: 0;
-  background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -0.02em;
 }
 
+/* ── Content ── */
 .subsystem-detail-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 32px;
 }
 
 .subsystem-detail-desc {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #B5B5B5;
   margin: 0;
 }
 
 .subsystem-additional-info {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 32px;
 }
 
 .subsystem-additional-info h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
   font-weight: 600;
+  color: #0059FF;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 0 0 16px;
 }
 
 .subsystem-additional-info p {
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
+  color: #B5B5B5;
+  line-height: 1.7;
+  font-size: 0.95rem;
   margin: 0;
 }
 
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes detailFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .subsystem-detail-wrapper {
+    padding: 80px 48px;
   }
 }
 
 @media (max-width: 768px) {
   .subsystem-detail-wrapper {
-    padding: 2rem 1rem;
+    padding: 72px 24px;
   }
-  
-  .subsystem-detail-container {
-    padding: 2rem;
-  }
-  
+
   .subsystem-detail-header {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
+    gap: 16px;
   }
-  
+
   .subsystem-detail-title {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
   }
 }
