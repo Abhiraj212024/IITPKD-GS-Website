@@ -41,10 +41,10 @@
   height: 52px;
   min-width: 52px;
   padding: 12px;
-  background: rgba(0, 89, 255, 0.08);
-  border: 1px solid rgba(0, 89, 255, 0.2);
+  background: rgba(231, 111, 0, 0.08);
+  border: 1px solid rgba(231, 111, 0, 0.2);
   border-radius: 4px;
-  color: #0059FF;
+  color: #E76F00;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,7 +90,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
   font-weight: 600;
-  color: #0059FF;
+  color: #E76F00;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   margin: 0 0 16px;

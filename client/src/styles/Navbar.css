@@ -36,7 +36,7 @@
 }
 
 .navbar-brand-accent {
-  color: #0059FF;
+  color: #E76F00;
   margin: 0 2px;
 }
 
@@ -71,7 +71,7 @@
   left: 16px;
   right: 16px;
   height: 1px;
-  background: #0059FF;
+  background: #E76F00;
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.25s ease;

@@ -7,8 +7,8 @@
   --bg-card:      #181818;
   --text-primary: #ffffff;
   --text-muted:   #B5B5B5;
-  --accent:       #0059FF;
-  --accent-2:     #00D9FF;
+  --accent:       #E76F00;
+  --accent-2:     #FF8A1D;
   --border:       rgba(255, 255, 255, 0.08);
   --radius-sm:    4px;
   --radius-md:    6px;
@@ -27,15 +27,27 @@
   min-height: 100vh;
 }
 
-/* ── Global fixed background (Neptune) — applies to all pages ── */
+/* ── Global fixed background (Mars) — applies to all pages ── */
 .site-bg {
   position: fixed;
   inset: 0;
   z-index: -1;
+  background-color: #000000;
+  overflow: hidden;
+}
+
+.site-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: -50vw;
   background-image: url('/site-bg.png');
   background-size: cover;
-  background-position: center right;
+  background-position: center;
   background-repeat: no-repeat;
+  opacity: 0.95;
 }
 
 /* Dark overlay over the image — keeps all text readable */
@@ -78,17 +90,17 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 89, 255, 0.4);
+  background: rgba(231, 111, 0, 0.4);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 89, 255, 0.7);
+  background: rgba(231, 111, 0, 0.7);
 }
 
 /* ── Selection ── */
 ::selection {
-  background-color: rgba(0, 89, 255, 0.3);
+  background-color: rgba(231, 111, 0, 0.3);
   color: #fff;
 }
 
@@ -121,8 +133,12 @@ a:focus-visible {
 }
 
 .btn-primary:hover {
-  background: #0047cc;
+  background: #FF8A1D;
   transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  background: #C65A00;
 }
 
 .btn-secondary {

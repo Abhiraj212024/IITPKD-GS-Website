@@ -29,7 +29,7 @@
   display: block;
   width: 48px;
   height: 2px;
-  background: #0059FF;
+  background: #E76F00;
   margin-top: 16px;
 }
 
@@ -44,25 +44,26 @@
 .subsystems-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
+  gap: 24px;
   width: 100%;
   max-width: 1100px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* ── Card ── */
 .subsystem-card {
   background-color: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
   padding: 36px 32px;
   display: flex;
   flex-direction: column;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 
 .subsystem-card:hover {
   background-color: #202020;
   transform: translateY(-2px);
+  border-color: rgba(231, 111, 0, 0.4);
 }
 
 /* ── Icon ── */
@@ -70,7 +71,7 @@
   width: 36px;
   height: 36px;
   margin-bottom: 24px;
-  color: #0059FF;
+  color: #E76F00;
 }
 
 .subsystem-icon svg {
