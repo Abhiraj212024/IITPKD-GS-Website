@@ -6,6 +6,8 @@ export default function MentorCard({
   "Hierarchal position": position,
   "Email ID": email,
   "LinkedIN ID": linkedin,
+  Batch,
+  CurrentStatus,
 }) {
   const defaultAvatar = `https://api.dicebear.com/6.x/initials/svg?seed=${encodeURIComponent(
     Name || "mentor",
@@ -34,6 +36,8 @@ export default function MentorCard({
         <p className="mentorCard_name">{Name || "Mentor"}</p>
         <p className="mentorCard_sys">{Subsystem || "subsystem"}</p>
         <p className="mentorCard_des">{position || "Member"}</p>
+        {Batch && <p className="mentorCard_batch">{Batch}</p>}
+        {CurrentStatus && <p className="mentorCard_status">{CurrentStatus}</p>}
       </div>
     {/*email char code used*/}
       <div className="mentorCard_actions">
