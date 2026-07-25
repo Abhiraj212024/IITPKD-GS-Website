@@ -7,7 +7,7 @@ export default function Projects() {
   const navigate = useNavigate();
 
   return (
-    <div className="projects-container">
+    <div className="projects-container page-transition">
       <div className="projects-header">
         <h1 className="projects-title">Our Projects</h1>
         <p className="projects-subtitle">

@@ -54,6 +54,7 @@ app.get('/debug-db', async (req, res) => {
 
 
 app.use('/member', require('./routes/member'));
+app.use('/alumni', require('./routes/alumni'));
 
 app.use(errorHandler);
 

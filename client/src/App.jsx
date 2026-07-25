@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./styles/App.css";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
@@ -11,8 +12,16 @@ import MSsec from "./pages/MSsec.jsx";
 import { sponsors } from "./data/sponsorsData.jsx";
 
 export default function App() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <>
+      {/* Global cinematic background — fixed, behind all pages */}
+      <div className="site-bg" aria-hidden="true" />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

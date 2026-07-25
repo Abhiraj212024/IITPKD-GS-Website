@@ -23,7 +23,7 @@ export default function SubsystemDetail() {
   }
 
   return (
-    <div className="subsystem-detail-wrapper">
+    <div className="subsystem-detail-wrapper page-transition">
       <div className="subsystem-detail-container">
         <button className="back-button" onClick={() => navigate('/subsystems')}>
           ← Back
