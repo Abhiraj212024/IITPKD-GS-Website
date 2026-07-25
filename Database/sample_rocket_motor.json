@@ -1,0 +1,28 @@
+{
+  "project_info": {
+    "projectName": "<PROJECT_NAME>",
+    "projectType": "Rocket Motor",
+    "projectDescription": "<PROJECT_DESCRIPTION>",
+    "projectLinks": [
+      "<PROJECT_LINK_1>",
+      "<PROJECT_LINK_2>"
+    ]
+  },
+  "rocket_motor_info": {
+    "projectName": "<PROJECT_NAME>",
+    "projectData": {
+      "Progress": "<PROGRESS_DESCRIPTION>",
+      "Materials": {
+        "Oxidizer": "<OXIDIZER_MATERIAL>",
+        "Propellant": "<PROPELLANT_MATERIAL>",
+        "Body Tube": "<BODY_TUBE_MATERIAL>",
+        "Thermal lining": "<THERMAL_LINING_MATERIAL>"
+      }
+    },
+    "projectStatus": "<PROJECT_STATUS>",
+    "projectLinks": [
+      "<PROJECT_LINK_1>",
+      "<PROJECT_LINK_2>"
+    ]
+  }
+}

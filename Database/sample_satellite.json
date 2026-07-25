@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "projectName": "<PROJECT_NAME>",
+    "projectType": "Satellite",
+    "projectDescription": "<PROJECT_DESCRIPTION>",
+    "projectLinks": [
+      "<PROJECT_LINK_1>",
+      "<PROJECT_LINK_2>"
+    ]
+  },
+  "satellite_info": {
+    "formFactor": "<FORM_FACTOR>",
+    "massGrams": "<MASS_IN_GRAMS>",
+    "deployment": {
+      "targetAltitudeMeters": "<TARGET_ALTITUDE_IN_METERS>",
+      "ejectionMechanism": "<EJECTION_MECHANISM>"
+    },
+    "recoverySystem": {
+      "trackingMethod": "<TRACKING_METHOD>",
+      "successfullyRecovered": false
+    },
+    "powerSystem": {
+      "batteryType": "<BATTERY_TYPE>",
+      "capacityMAh": "<CAPACITY_IN_MAH>"
+    },
+    "instruments": [
+      "<INSTRUMENT_1>",
+      "<INSTRUMENT_2>"
+    ],
+    "missionStatus": "<MISSION_STATUS>",
+    "googleDriveLinks": [
+      "<GOOGLE_DRIVE_LINK_1>"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "project_info": {
+    "projectName": "<PROJECT_NAME>",
+    "projectType": "Rocket",
+    "projectDescription": "<PROJECT_DESCRIPTION>",
+    "projectLinks": [
+      "<PROJECT_LINK_1>",
+      "<PROJECT_LINK_2>"
+    ]
+  },
+  "rocket_info": {
+    "projectName": "<PROJECT_NAME>",
+    "launchDate": "<YYYY-MM-DDTHH:MM:SS.000Z>",
+    "motorType": "<MOTOR_TYPE>",
+    "altitude": {
+      "target": "<TARGET_ALTITUDE>",
+      "actual": "<ACTUAL_ALTITUDE>",
+      "unit": "<UNIT>"
+    },
+    "payload": {
+      "description": "<PAYLOAD_DESCRIPTION>",
+      "payloadData": {
+        "$oid": "<SATELLITE_OBJECT_ID>"
+      },
+      "weightGrams": "<WEIGHT_IN_GRAMS>"
+    },
+    "status": "<LAUNCH_STATUS>",
+    "googleDriveLinks": [
+      "<GOOGLE_DRIVE_LINK_1>"
+    ]
+  }
+}
