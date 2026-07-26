@@ -222,3 +222,56 @@ satellite_info = {
 result = upload_satellite(project_info, satellite_info)
 print("Uploaded IDs:", result)
 ```
+
+---
+
+## Modifying & Updating Existing Projects
+
+All upload scripts support **upserting / updating existing project data** (e.g. updating an in-progress project to completed, setting actual altitude, updating satellite recovery status, etc.).
+
+### Automatic Upsert (Default)
+By default (`--mode auto`), if a project with the matching `projectName` already exists in MongoDB, the script will automatically **update** the existing project documents instead of creating duplicates.
+
+```bash
+# Updates existing 'Agnibaan Rocket' project data in MongoDB Atlas:
+python Database/upload_rocket.py --json Database/sample_rocket.json
+```
+
+### Modes & CLI Arguments
+- `--mode auto` (default): Updates existing project if matched by `projectName` or `--id`; inserts a new project if not found.
+- `--mode update`: Strictly updates an existing project. Raises an error if the project is not found.
+- `--mode insert`: Forces creation of a new project document even if the name matches.
+- `--id <OBJECT_ID>`: Optional. Explicitly target a specific `project_description` `_id` string to update.
+
+#### Command Line Examples:
+```bash
+# Strict update mode
+python Database/upload_rocket.py --json Database/sample_rocket.json --mode update
+
+# Update a specific project by document ID
+python Database/upload_rocket.py --json Database/sample_rocket.json --mode update --id 60f7a2b3c4d5e6f7a8b9c0d1
+```
+
+### Python API Usage for Updating:
+```python
+from db import update_rocket, update_satellite, update_rocket_motor
+
+# Update Rocket status and flight altitude telemetry
+project_info = {
+    "projectName": "Project Phoenix",
+    "projectDescription": "Updated project summary with flight results."
+}
+
+rocket_info = {
+    "projectName": "Project Phoenix",
+    "status": "Completed",
+    "altitude": {
+        "actual": "4850",
+        "unit": "m"
+    }
+}
+
+result = update_rocket(project_info, rocket_info)
+print("Updated Project:", result)
+```
+

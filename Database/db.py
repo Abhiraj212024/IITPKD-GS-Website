@@ -94,103 +94,38 @@ def sync_collections_from_sheets(unique_fields: dict = None):
         print(f"An error occurred during global sync: {e}")
         return False
 
-def make_satellite(satellite_data: dict, project_data: dict):
+def make_satellite(satellite_data: dict, project_data: dict, update_if_exists: bool = True):
     try:
-        db = get_db("Projects")
-
-        project_details = db["Project details"]
-        sat = db["Satellites"]
-
-        # 1. Insert the satellite details into the Satellites collection
-        sat_result = sat.insert_one(satellite_data)
-
-        # 2. Reference the generated ObjectId from the Satellite document
-        project_data["projectData"] = sat_result.inserted_id
-        project_data["projectType"] = "Satellite"
-
-        # 3. Insert the linked project details into the Project details collection
-        proj_result = project_details.insert_one(project_data)
-
-        print(f"Successfully added Satellite! Satellite ID: {sat_result.inserted_id}, Project ID: {proj_result.inserted_id}")
-        return True
-
+        from upload_satellite import upload_satellite
+        mode = "auto" if update_if_exists else "insert"
+        res = upload_satellite(project_data, satellite_data, mode=mode)
+        return res
     except Exception as e:
-        print(f"  An error {e} occurred while syncing collection 'Satellites'.")
+        print(f"An error occurred while saving satellite project: {e}")
         return False
 
-"""
-```Example usage```
-satellite_info = {
-  "formFactor": "Form factor",
-  "massGrams": "Weight in grams",
-  "deployment": {"targetAltitudeMeters": "target", "ejectionMechanism": "Ejection Charge"},
-  "recoverySystem": {"trackingMethod": "radio, gps", "successfullyRecovered": False},
-  "powerSystem": {"batteryType": "Battery type", "capacityMAh": "capacity"},
-  "instruments": ["some", "instruments"],
-  "missionStatus": "Awaiting Launch",
-  "googleDriveLinks": ["https://drive.google.com/link-to-image"]
-}
-
-project_info = {
-  "projectName": "Project Name",
-  "projectDescription": "Description",
-  "projectLinks": ["https://drive.google.com/folder-link", "https://github.com/repo-link"]
-}
-
-make_satellite(satellite_info, project_info)
-"""
-
-def make_rocket(rocket_data: dict, project_data: dict):
+def make_rocket(rocket_data: dict, project_data: dict, update_if_exists: bool = True):
     try:
-        db = get_db("Projects")
-
-        project_details = db["Project details"]
-        rocket_col = db["Rockets"]
-
-        # 1. Insert the Rocket details into the Rockets collection
-        rocket_result = rocket_col.insert_one(rocket_data)
-
-        # 2. Reference the generated ObjectId from the Rocket document
-        project_data["projectData"] = rocket_result.inserted_id
-        project_data["projectType"] = "Rocket"
-
-        # 3. Insert the linked project details into the Project details collection
-        proj_result = project_details.insert_one(project_data)
-
-        print(f"Successfully added Rocket! Rocket ID: {rocket_result.inserted_id}, Project ID: {proj_result.inserted_id}")
-        return True
-
+        from upload_rocket import upload_rocket
+        mode = "auto" if update_if_exists else "insert"
+        res = upload_rocket(project_data, rocket_data, mode=mode)
+        return res
     except Exception as e:
-        print(f"  An error {e} occurred while syncing collection 'Rockets'.")
+        print(f"An error occurred while saving rocket project: {e}")
         return False
 
-"""
-```Example usage```
-rocket_info = {
-  "projectName": "Rocket name",
-  "launchDate": datetime.datetime(y, m, d, h, min, sec, tzinfo=datetime.timezone.utc),
-  "motorType": "Motor type",
-  "altitude": {
-    "target": "target",
-    "actual": "actual",
-    "unit": "m"
-  },
-  "payload": {
-    "description": "payload description",
-    "payloadData": ObjectId(id), # Linking to a satellite/payload id
-    "weightGrams": "weight Grams"
-  },
-  "status": "Launched",
-  "googleDriveLinks": [
-    "https://drive.google.com/link-to-image"
-  ]
-}
+def update_rocket(project_info: dict, rocket_info: dict, project_id: str = None):
+    """Updates an existing rocket project in MongoDB Atlas."""
+    from upload_rocket import upload_rocket
+    return upload_rocket(project_info, rocket_info, mode="update", project_id=project_id)
 
-project_info = {
-  "projectName": "Project Name",
-  "projectDescription": "Description",
-  "projectLinks": ["https://drive.google.com/folder-link", "https://github.com/repo-link"]
-}
+def update_rocket_motor(project_info: dict, rocket_motor_info: dict, project_id: str = None):
+    """Updates an existing rocket motor project in MongoDB Atlas."""
+    from upload_rocket_motor import upload_rocket_motor
+    return upload_rocket_motor(project_info, rocket_motor_info, mode="update", project_id=project_id)
 
-make_rocket(rocket_info, project_info)
-"""
+def update_satellite(project_info: dict, satellite_info: dict, project_id: str = None):
+    """Updates an existing satellite project in MongoDB Atlas."""
+    from upload_satellite import upload_satellite
+    return upload_satellite(project_info, satellite_info, mode="update", project_id=project_id)
+
